@@ -1,0 +1,19 @@
+section,insight
+Churn Distribution,"Observed churn is 27.8%, representing 5,560 customers."
+Contract Type,Monthly customers have the highest churn rate at 33.9%.
+Subscription Plan,Basic has the highest observed churn rate at 36.6%.
+Numeric Churn Signals,days_since_last_transaction shows the largest standardized gap between churned and retained customers.
+Transaction Behavior,"Among transaction behavior metrics, txn_upgrade_rate is highest for churned customers at 17.9%."
+Monthly Churn Trend,The latest monthly churn rate is 5.1% for 2024-12-01.
+Model Comparison,XGBoost is the leading model by ROC-AUC at 0.988.
+Confusion Matrix,"At the default threshold, the model captures 1,284 churners and misses 106 churners in the test set."
+ROC Curve,XGBoost provides the strongest class separation with ROC-AUC 0.988.
+Precision-Recall,The best tested F1 threshold for XGBoost is 0.53.
+Feature Importance,numeric__last_transaction_date_month is the strongest model signal for churn risk.
+SHAP Analysis,SHAP confirms numeric__days_since_last_transaction as the top local impact driver.
+Customer Risk Segmentation,"5,284 customers are classified as high risk using the 65% probability threshold."
+Business Recommendations,"Prioritize retention offers for Monthly contract customers, where observed churn is 33.9%."
+Business Recommendations,"Review onboarding and value realization for Basic plan customers, the plan with the highest churn rate at 36.6%."
+Business Recommendations,"Use the leading model signals for intervention triggers: numeric__last_transaction_date_month, numeric__last_transaction_date_year, numeric__signup_date_quarter."
+Business Recommendations,"Create a retention queue for the 5,284 high-risk customers with predicted churn probability at or above 65%."
+Business Recommendations,Monitor precision and recall before launching campaigns so retention capacity is aligned with the selected probability threshold.

@@ -1,0 +1,17 @@
+Executive Churn Summary
+=======================
+Target: existing 'churn' column from the processed customer dataset.
+Customer base analyzed: 20,000
+Observed churned customers: 5,560
+Observed churn rate: 27.8%
+Best model: XGBoost
+Best model ROC-AUC: 0.988
+Best model F1: 0.936
+Best model recall: 0.924
+High-risk customers identified: 5,284
+Top recommendations:
+- Prioritize retention offers for Monthly contract customers, where observed churn is 33.9%.
+- Review onboarding and value realization for Basic plan customers, the plan with the highest churn rate at 36.6%.
+- Use the leading model signals for intervention triggers: numeric__last_transaction_date_month, numeric__last_transaction_date_year, numeric__signup_date_quarter.
+- Create a retention queue for the 5,284 high-risk customers with predicted churn probability at or above 65%.
+- Monitor precision and recall before launching campaigns so retention capacity is aligned with the selected probability threshold.

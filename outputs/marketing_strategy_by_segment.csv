@@ -1,0 +1,11 @@
+rfm_segment,customers,customer_share,segment_revenue,revenue_share,recommended_strategy
+Big Spenders,2183,0.10915,226179690.96,0.42862695524351907,Offer premium bundles and personalized account attention.
+Champions,1791,0.08955,149310863.15,0.2829549389917791,"Protect with loyalty benefits, executive updates, and expansion conversations."
+Loyal High Value,804,0.0402,56221832.71,0.10654445971879749,"Prioritize cross-sell, renewal confidence, and premium support."
+At Risk High Value,823,0.04115,38655769.93,0.07325549388348973,Trigger urgent value-protection outreach and success review.
+Needs Attention,4460,0.223,20943744.62,0.03968991844389791,Run reactivation campaigns with clear value reminders.
+Steady Customers,2322,0.1161,20373175.73,0.03860864892301672,Monitor for growth signals and promote relevant add-ons.
+Potential Loyalists,2781,0.13905,7417014.84,0.014055782260430392,Encourage repeat purchase with adoption nudges and targeted offers.
+New or Promising,1504,0.0752,3367864.29,0.006382347637707976,"Focus on onboarding, education, and first-repeat conversion."
+Regular Customers,1324,0.0662,2834213.57,0.005371040732537767,Maintain steady engagement and test conversion incentives.
+Low Value Dormant,2008,0.1004,2380074.49,0.004510414164823879,Use low-cost automated nurture or suppress from expensive campaigns.

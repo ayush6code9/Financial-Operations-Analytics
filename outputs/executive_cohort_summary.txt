@@ -1,0 +1,19 @@
+Executive Cohort Summary
+========================
+Cohort definition: Customer Signup Month from signup_date.
+Definition rationale: signup_date exists for every customer and aligns with acquisition_month and transaction cohort_month across the processed datasets.
+Customer base analyzed: 20,000
+Signup cohorts analyzed: 35
+Latest activity month: 2024-12
+Average month-1 customer retention: 93.1%
+Average month-3 customer retention: 81.3%
+Average month-6 customer retention: 70.3%
+Average observed revenue retention: 104.4%
+Best cohort by retention: 2024-07
+Weakest cohort by retention: 2022-01
+Top recommendations:
+- Study acquisition, onboarding, and customer profile patterns from the 2024-07 cohort because it has the strongest observed retention among cohorts with sufficient history.
+- Review the 2022-01 cohort for onboarding friction, early product adoption issues, or acquisition-quality differences.
+- Use month-3 retention of 81.3% as an early-health checkpoint for new signup cohorts.
+- Track customer retention and revenue retention together; cohorts with stable customer counts but weaker revenue retention may need expansion or pricing review.
+- Refresh these cohort tables monthly after new transaction data is processed so retention trends are monitored with consistent methodology.

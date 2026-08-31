@@ -1,0 +1,8 @@
+Executive Forecast Summary
+==========================
+Dataset: 36 monthly observations
+Forecast horizon: 12 months
+Projected total revenue over the next 12 months: 709,544,426.57
+Average monthly forecast: 59,128,702.21
+Last observed monthly revenue: 64,506,289.12
+Interpretation: the revenue outlook remains positive and should be monitored against actual monthly performance.

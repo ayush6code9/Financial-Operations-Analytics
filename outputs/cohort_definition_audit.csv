@@ -1,0 +1,5 @@
+candidate_definition,source_column,coverage_rate,alignment_with_signup,selected,reason
+Customer Signup Month,signup_date,1.0,1.0,True,Complete customer lifecycle anchor and aligned with acquisition fields.
+Account Acquisition Month,acquisition_month,1.0,1.0,False,"Equivalent to signup month in this dataset, so signup_date is more explicit."
+First Transaction Month,transaction_date,1.0,0.9724,False,"Supported, but some customers transact after signup month."
+Transaction Cohort Month,transactions.cohort_month,1.0,1.0,False,Matches signup month but is derived at transaction grain.

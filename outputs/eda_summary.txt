@@ -1,0 +1,7 @@
+Exploratory Data Analysis Summary
+---------------------------------
+Customers: 20,000 rows, 36 columns
+Transactions: 329,202 rows, 30 columns
+Monthly Revenue: 36 rows, 18 columns
+The analysis confirms that the cleaned data is suitable for descriptive and relationship-based review.
+The most informative patterns are found in revenue, engagement, and customer-value variables.

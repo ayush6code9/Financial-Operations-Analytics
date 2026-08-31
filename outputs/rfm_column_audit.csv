@@ -1,0 +1,5 @@
+rfm_component,source_column,status,assumption
+customer_identifier,customer_id,available,One customer_id identifies one customer across transactions and customer records.
+recency,transaction_date,available,Latest completed transaction date represents most recent purchase activity.
+frequency,transaction_id,available,Frequency is the count of completed transaction_id records.
+monetary,net_revenue,available,Monetary value is completed transaction net revenue.

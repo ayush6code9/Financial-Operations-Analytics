@@ -1,0 +1,32 @@
+metric,value,source
+Total Revenue,530337543.21999997,kpi_preparation
+Revenue Growth,194282.7040970071,kpi_preparation
+Forecast Revenue,709544426.5703787,kpi_preparation
+Active Customers,14440,kpi_preparation
+Churn Rate,27.800000000000004,kpi_preparation
+Customer Retention,0.8133654631718472,kpi_preparation
+Average CLV,25785.832409499995,kpi_preparation
+Average Order Value,1610.9791046834466,kpi_preparation
+Total Profit,438885098.31,kpi_preparation
+Profit Margin,82.75580409511707,kpi_preparation
+Largest Customer Segment,Core,kpi_preparation
+Highest Revenue Segment,Strategic,kpi_preparation
+Highest Profit Segment,Strategic,kpi_preparation
+Highest CLV Segment,Strategic,kpi_preparation
+Total Revenue,530337543.21999997,executive_summary
+Revenue Growth,194282.7040970071,executive_summary
+Forecast Revenue,709544426.5703787,executive_summary
+Active Customers,14440,executive_summary
+Churn Rate,27.800000000000004,executive_summary
+Customer Retention,0.8133654631718472,executive_summary
+Average CLV,25785.832409499995,executive_summary
+Average Order Value,1610.9791046834466,executive_summary
+Total Profit,438885098.31,executive_summary
+Profit Margin,82.75580409511707,executive_summary
+Largest Customer Segment,Core,executive_summary
+Highest Revenue Segment,Strategic,executive_summary
+Highest Profit Segment,Strategic,executive_summary
+Highest CLV Segment,Strategic,executive_summary
+Top Business Risks,Elevated churn rate may pressure recurring revenue.,executive_summary
+Top Growth Opportunities,Healthy profit margin supports reinvestment in growth and retention. | Positive revenue trend can be amplified through high-performing segments. | Prioritize high-value RFM segments for expansion and retention offers.,executive_summary
+Final Business Recommendation,Deploy a dual-track strategy: protect high-risk revenue with retention actions while scaling high-margin segments and channels.,executive_summary

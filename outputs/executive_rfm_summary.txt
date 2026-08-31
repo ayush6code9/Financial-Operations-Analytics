@@ -1,0 +1,16 @@
+Executive RFM Summary
+=====================
+Total Customers: 20,000
+Average Recency: 81.1 days
+Average Frequency: 15.5 completed transactions
+Average Monetary Value: 26,384.21
+Largest Customer Segment: Needs Attention (4,460 customers)
+Highest Revenue Segment: Big Spenders (226,179,690.96)
+Highest CLV Segment: Big Spenders
+Most Valuable Customers: 100
+Customers Requiring Attention: 500
+Retention Opportunities: 1,438
+Recommended focus:
+- Protect and expand Big Spenders customers because they lead revenue contribution.
+- Scale marketing actions around Needs Attention because it is the largest customer group.
+- Prioritize customers requiring attention with low-cost reactivation and value reminders.

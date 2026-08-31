@@ -1,0 +1,2 @@
+total_customers,average_recency,average_frequency,average_monetary_value,largest_customer_segment,largest_customer_segment_count,highest_revenue_segment,highest_revenue_segment_revenue,highest_clv_segment,highest_clv_segment_average_clv,most_valuable_customers,customers_requiring_attention,retention_opportunities,reference_date,squarify_available
+20000,81.0721,15.47615,26384.2122145,Needs Attention,4460,Big Spenders,226179690.96,Big Spenders,132460.27693541,100,500,1438,2025-01-01,False

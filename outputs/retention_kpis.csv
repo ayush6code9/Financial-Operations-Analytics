@@ -1,0 +1,2 @@
+total_customers,total_cohorts,analysis_month,average_month_1_retention,average_month_3_retention,average_month_6_retention,average_month_12_retention,average_observed_retention,average_observed_revenue_retention,total_completed_net_revenue,best_cohort_by_retention,worst_cohort_by_retention
+20000,35,2024-12,0.9305639421549717,0.8133654631718472,0.7025313907921459,0.5989048220761544,0.690321865738222,1.0441736585611205,527684244.29,2024-07,2022-01
