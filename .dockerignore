@@ -1,0 +1,35 @@
+.git
+.venv
+venv
+env
+
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache
+.mypy_cache
+.ruff_cache
+.ipynb_checkpoints
+
+.DS_Store
+.env
+.env.*
+.streamlit/secrets.toml
+
+# Development / analysis files not required by Streamlit
+data/raw/
+notebooks/
+powerbi/
+sql/
+reports/
+
+# Generated files not required at runtime
+outputs/eda_visuals/
+
+# Tests and local development
+tests/
+screenshots/
+
+*.log
+*.tmp
