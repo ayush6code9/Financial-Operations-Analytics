@@ -32,7 +32,7 @@ reports/*.pdf
 data/processed/financial_transactions_clean.csv
 
 # Local/generated files
-notebooks/
+
 outputs/figures/
 outputs/eda_visuals/
 outputs/active_customer_matrix.csv
