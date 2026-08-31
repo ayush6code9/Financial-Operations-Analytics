@@ -1,68 +1,130 @@
-# Financial Operations Analytics & Predictive ML
+# Financial Operations Analytics
 
-An end-to-end financial analytics and predictive ML system for revenue forecasting, customer churn prediction, RFM segmentation, cohort analysis, profitability analysis, explainable ML, and customer-level business decision support.
+> An end-to-end financial analytics and predictive ML platform for revenue forecasting, customer churn prediction, customer segmentation, cohort analysis, profitability analysis, and executive decision support.
 
-This project turns 20,000 customer records, 329,202 transactions, and 36 months of revenue history into a professional Streamlit dashboard, a lightweight FastAPI backend, reusable Python analytics/ML modules, and Docker-ready deployment assets.
+### 🚀 [Live Dashboard](https://financial-operations-analytics-1.onrender.com/)
+**Try the complete interactive application →**
 
-## Features
+[![Python](https://img.shields.io/badge/Python-3.11+-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![Pandas](https://img.shields.io/badge/Pandas-Analytics-150458?logo=pandas&logoColor=white)](https://pandas.pydata.org/)
+[![Scikit-learn](https://img.shields.io/badge/Scikit--learn-Machine%20Learning-F7931E?logo=scikit-learn&logoColor=white)](https://scikit-learn.org/)
+[![XGBoost](https://img.shields.io/badge/XGBoost-Churn%20Prediction-189FDD)](https://xgboost.readthedocs.io/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-FF4B4B?logo=streamlit&logoColor=white)](https://streamlit.io/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-API-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
+[![Docker](https://img.shields.io/badge/Docker-Deployment-2496ED?logo=docker&logoColor=white)](https://www.docker.com/)
 
-- Executive Overview with revenue, profit, churn, customer, cohort, and segment KPIs
-- Customer Churn Prediction using the extracted XGBoost pipeline from the churn notebook
-- Customer 360 combining customer attributes, RFM, churn risk, profitability, cohort context, and recent transactions
-- Revenue Forecasting using the existing ARIMA forecast outputs
-- ML Model Lab with actual model comparison, cross-validation, feature importance, and SHAP outputs
-- Business Insights translating analytics into retention, profitability, cohort, and segment recommendations
-- FastAPI endpoints for churn prediction, customer lookup, model metrics, and revenue forecast
-- Docker and Docker Compose support for local demo deployment
+---
 
-## Key Results
+## Executive Summary
 
-| Metric | Actual Project Result |
+Financial Operations Analytics is an end-to-end analytics project that transforms customer, transaction, and revenue data into decision-ready financial and customer insights.
+
+The platform combines data processing, exploratory analysis, statistical analytics, machine learning, time-series forecasting, customer segmentation, cohort analysis, profitability analysis, explainable AI, and interactive business intelligence in a single deployable application.
+
+```text
+Operational Data
+      ↓
+Data Cleaning & Processing
+      ↓
+Exploratory & Statistical Analysis
+      ↓
+Feature Engineering
+      ↓
+ML + Forecasting
+      ↓
+Business Insights
+      ↓
+Interactive Dashboard
+      ↓
+Production Deployment
+```
+
+---
+
+## Key Business Results
+
+| KPI | Result |
 |---|---:|
 | Customers analyzed | 20,000 |
 | Transactions analyzed | 329,202 |
-| Total revenue | $530.3M |
+| Historical revenue | $530.3M |
 | Total profit | $438.9M |
-| Active customers | 14,440 |
+| Profit margin | 82.8% |
 | Observed churn rate | 27.8% |
 | High-risk customers flagged | 5,284 |
-| Best churn model | XGBoost |
-| XGBoost ROC-AUC | 0.988 |
-| XGBoost F1 | 0.936 |
+| Average customer lifetime value | $25.8K |
+| Best churn model | XGBoost (ROC-AUC 0.988, F1 0.936) |
 | Forecast horizon | 12 months |
 | Forecasted revenue | $709.5M |
 | Month-1 retention | 93.1% |
 | Month-6 retention | 70.3% |
-| Top RFM revenue segment | Big Spenders, $226.2M |
+| Top RFM revenue segment | Big Spenders — $226.2M |
+
+These KPIs are surfaced live through the deployed executive dashboard.
+
+---
+
+## Business Problems Solved
+
+**Revenue & Forecasting** — Analyze revenue trends and seasonality, evaluate historical performance, and generate forward-looking revenue forecasts.
+
+**Customer Retention** — Identify customers likely to churn, prioritize high-risk accounts, and translate behavioral signals into retention opportunities.
+
+**Customer Value** — Identify high-value customers, compare segments, and understand behavioral and monetary differences between them.
+
+**Cohort & Retention** — Measure cohort performance over time and identify the strongest and weakest customer cohorts.
+
+**Profitability** — Analyze customer- and product-level profitability to identify high-value and low-value areas of the business.
+
+---
 
 ## Application Pages
 
 | Page | What it demonstrates |
 |---|---|
-| Executive Overview | Business KPIs, revenue trend, churn distribution, RFM revenue concentration, profitability, cohort retention |
-| Customer Churn Prediction | Live XGBoost inference with actual model features and risk-based recommendation |
-| Customer 360 | Customer-level decision support across churn, value, RFM, profitability, cohort, and transaction history |
-| Revenue Forecasting | Historical revenue, exported ARIMA forecast, forecast KPIs, and model comparison context |
-| ML Model Lab | Model selection, holdout metrics, cross-validation, feature importance, and SHAP explainability |
-| Business Insights | Dataset-backed recommendations from churn, cohort, RFM, profitability, and executive outputs |
+| Executive Overview | Revenue, profit, churn, customer, cohort, and segment KPIs; monthly revenue trends and forecast |
+| Customer Churn Prediction | Live XGBoost inference with actual model features and risk-based recommendations |
+| Customer 360 | Customer-level view combining profile, RFM, churn risk, profitability, cohort context, and transaction history |
+| Revenue Forecasting | Historical revenue, exported ARIMA forecast, forecast KPIs, and model context |
+| ML Model Lab | Model comparison, holdout metrics, cross-validation, feature importance, and SHAP explainability |
+| Business Insights | Dataset-backed recommendations from churn, cohort, RFM, and profitability analysis |
 
-## ML Models
+---
 
-### Churn Prediction
+## Analytics & Machine Learning
 
-The churn workflow is preserved in `notebooks/04_Churn_Prediction.ipynb` and extracted into reusable code in `src/financial_ops/churn_model.py`.
+### 1. Data Acquisition & Processing
+Reusable modules handle customer data, transaction data, and monthly revenue data, producing cleaned, analysis-ready datasets and downstream analytical outputs.
 
-Actual model workflow:
+```text
+src/financial_ops/
+```
 
-- Target: existing `churn` column from `financial_customers_clean.csv`
-- Leakage exclusions: `customer_id`, raw date strings, `is_active`, `risk_score`, `customer_segment`, `customer_profitability`
-- Feature engineering: date parts, transaction aggregates, transaction behavior rates, revenue/profit ratios, support and login ratios
-- Model comparison: Baseline, Logistic Regression, Decision Tree, Random Forest, XGBoost
-- Best model: XGBoost by ROC-AUC
-- Saved artifact: `models/churn_xgboost_pipeline.joblib`
-- Raw model features: 57
+### 2. Exploratory Data Analysis
+Covers data quality checks, missing-value and outlier analysis, univariate/bivariate/multivariate analysis, and revenue, customer, and transaction behavior patterns.
 
-Actual holdout metrics from `outputs/model_evaluation_metrics.csv`:
+```text
+notebooks/02_Exploratory_Data_Analysis.ipynb
+```
+
+### 3. Revenue Analytics & Forecasting
+Monthly revenue trends, distribution, time-series analysis, and forecast generation/evaluation.
+
+```text
+notebooks/03_Revenue_Time_Series_Forecasting.ipynb
+```
+Key outputs: `outputs/forecast_results.csv`, `outputs/forecast_summary.txt`, `outputs/revenue_analysis.csv`
+
+### 4. Customer Churn Prediction
+An XGBoost classification pipeline predicts churn from behavioral and transactional features.
+
+```text
+Customer + Transaction Data → Feature Engineering → XGBoost Classification
+    → Model Evaluation → Cross Validation → Feature Importance
+    → SHAP Explainability → Customer Risk Scoring
+```
+
+Model comparison (holdout metrics, `outputs/model_evaluation_metrics.csv`):
 
 | Model | Accuracy | Precision | Recall | F1 | ROC-AUC |
 |---|---:|---:|---:|---:|---:|
@@ -72,138 +134,201 @@ Actual holdout metrics from `outputs/model_evaluation_metrics.csv`:
 | Decision Tree | 0.944 | 0.885 | 0.918 | 0.901 | 0.969 |
 | Baseline | 0.722 | 0.000 | 0.000 | 0.000 | 0.500 |
 
-### Revenue Forecasting
+Trained artifact: `models/churn_xgboost_pipeline.joblib`
+Explainability outputs: `outputs/churn_feature_importance.csv`, `outputs/shap_feature_importance.csv`, `outputs/figures/shap_feature_impact.png`
 
-The forecasting workflow is preserved in `notebooks/03_Revenue_Time_Series_Forecasting.ipynb`.
+```text
+notebooks/04_Churn_Prediction.ipynb
+```
 
-Actual workflow:
+### 5. RFM Customer Segmentation
+Customers scored on Recency, Frequency, and Monetary value.
 
-- Target: monthly `net_revenue`
-- Data: 36 monthly observations
-- Validation: date parsing, monthly frequency checks, stationarity review, ACF/PACF, seasonal decomposition
-- Models evaluated in notebook: baseline and ARIMA, with Prophet attempted only when installed
-- Final exported forecast: `outputs/forecast_results.csv`
-- Forecast summary: `outputs/forecast_summary.txt`
+```text
+notebooks/06_RFM_Customer_Segmentation.ipynb
+```
+Key outputs: `outputs/rfm_table.csv`, `outputs/segment_summary.csv`, `outputs/marketing_strategy_by_segment.csv`
 
-## Explainability
+### 6. Cohort & Retention Analysis
+Cohort definitions, retention matrices, monthly retention trends, and best/worst-performing cohorts.
 
-The project includes both model feature importance and SHAP output:
+```text
+notebooks/05_Cohort_Analysis.ipynb
+```
+Key outputs: `outputs/cohort_summary.csv`, `outputs/monthly_retention_trend.csv`, `outputs/best_cohorts.csv`, `outputs/worst_cohorts.csv`
 
-- `outputs/churn_feature_importance.csv`
-- `outputs/shap_feature_importance.csv`
-- `outputs/figures/feature_importance.png`
-- `outputs/figures/shap_feature_impact.png`
+### 7. Customer Profitability
+Customer- and product-level profitability, margin analysis, and top/low-value customer identification.
 
-The app surfaces these in the ML Model Lab and uses lightweight customer-specific driver checks for live prediction explanations.
+```text
+notebooks/07_Profitability_Analysis.ipynb
+```
+Key outputs: `outputs/customer_profitability.csv`, `outputs/product_profitability.csv`, `outputs/profitability_summary.csv`
+
+---
 
 ## Architecture
 
-```mermaid
-flowchart TD
-    A[Raw CSV Data] --> B[Data Cleaning and Validation]
-    B --> C[Processed Customer, Transaction, Revenue Tables]
-    C --> D[SQL Analytics]
-    C --> E[Python Notebooks]
-    E --> F[Reusable src/financial_ops Logic]
-    F --> G[Churn XGBoost Artifact]
-    F --> H[Forecast, RFM, Cohort, Profitability Outputs]
-    G --> I[FastAPI]
-    H --> I
-    G --> J[Streamlit Application]
-    H --> J
-    I --> K[Recruiter Demo API]
-    J --> L[Recruiter Demo Dashboard]
+```text
+                     ┌──────────────────────┐
+                     │     Source Data      │
+                     │ Customers            │
+                     │ Transactions         │
+                     │ Monthly Revenue      │
+                     └──────────┬───────────┘
+                                │
+                                ▼
+                     ┌──────────────────────┐
+                     │ Data Processing      │
+                     │ Cleaning             │
+                     │ Validation           │
+                     │ Feature Engineering  │
+                     └──────────┬───────────┘
+                                │
+                                ▼
+              ┌──────────────────────────────────┐
+              │          Analytics Layer         │
+              │                                  │
+              │ EDA                              │
+              │ Revenue Analytics                │
+              │ Forecasting                      │
+              │ Churn Prediction                 │
+              │ RFM Segmentation                 │
+              │ Cohort Analysis                  │
+              │ Profitability Analysis           │
+              └───────────────┬──────────────────┘
+                              │
+                              ▼
+                 ┌─────────────────────────┐
+                 │ Analytical Artifacts    │
+                 │ CSV / TXT / Models      │
+                 │ Visualizations          │
+                 └────────────┬────────────┘
+                              │
+                              ▼
+                 ┌─────────────────────────┐
+                 │ Streamlit Dashboard     │
+                 │ Executive KPIs          │
+                 │ Customer Analytics      │
+                 │ ML Insights             │
+                 └────────────┬────────────┘
+                              │
+                              ▼
+                 ┌─────────────────────────┐
+                 │ Docker + Render         │
+                 │ Production Deployment   │
+                 └─────────────────────────┘
 ```
+
+---
 
 ## Tech Stack
 
-| Layer | Tools |
+| Area | Technologies |
 |---|---|
-| Analytics | Python, pandas, numpy |
-| Visualization | Plotly, matplotlib, seaborn |
-| Machine Learning | scikit-learn, XGBoost |
-| Explainability | SHAP, feature importance |
-| Forecasting | statsmodels ARIMA notebook workflow, exported forecast outputs |
+| Programming | Python |
+| Data Analysis | Pandas, NumPy, SciPy |
+| Visualization | Matplotlib, Plotly |
+| Machine Learning | Scikit-learn, XGBoost |
+| Explainability | SHAP |
+| Forecasting | Time-series forecasting / ARIMA (statsmodels) |
+| Dashboard | Streamlit |
 | API | FastAPI, Pydantic, Uvicorn |
-| App | Streamlit |
-| SQL | PostgreSQL scripts with CTEs, constraints, and business queries |
-| Deployment | Docker, Docker Compose |
-| Testing | pytest |
+| SQL | PostgreSQL (CTEs, constraints, business queries) |
+| Testing | Pytest |
+| Deployment | Docker, Render |
+| Version Control | Git, GitHub |
+
+---
 
 ## Project Structure
 
 ```text
-Financial-Operations-Analytics-main/
-|-- app/
-|   |-- dashboard.py
-|   `-- pages/
-|       |-- overview.py
-|       |-- churn.py
-|       |-- customer360.py
-|       |-- forecasting.py
-|       |-- model_lab.py
-|       `-- insights.py
-|-- api/
-|   `-- main.py
-|-- src/financial_ops/
-|   |-- analytics.py
-|   |-- churn_model.py
-|   |-- data.py
-|   |-- forecasting.py
-|   `-- paths.py
-|-- scripts/
-|   `-- train_churn_model.py
-|-- models/
-|   `-- churn_xgboost_pipeline.joblib
-|-- tests/
-|   `-- test_core.py
-|-- data/
-|   |-- raw/
-|   `-- processed/
-|-- notebooks/
-|-- outputs/
-|-- sql/
-|-- Dockerfile
-|-- docker-compose.yml
-`-- requirements.txt
+Financial-Operations-Analytics/
+│
+├── api/
+│   ├── __init__.py
+│   └── main.py
+│
+├── app/
+│   ├── dashboard.py
+│   ├── shared.py
+│   ├── ui.py
+│   └── pages/
+│       ├── overview.py
+│       ├── churn.py
+│       ├── customer360.py
+│       ├── forecasting.py
+│       ├── model_lab.py
+│       └── insights.py
+│
+├── data/
+│   └── processed/
+│       ├── financial_customers_clean.csv
+│       ├── financial_transactions_clean.csv
+│       └── monthly_revenue_clean.csv
+│
+├── models/
+│   └── churn_xgboost_pipeline.joblib
+│
+├── notebooks/
+│   ├── 01_Data_Acquisition.ipynb
+│   ├── 02_Exploratory_Data_Analysis.ipynb
+│   ├── 03_Revenue_Time_Series_Forecasting.ipynb
+│   ├── 04_Churn_Prediction.ipynb
+│   ├── 05_Cohort_Analysis.ipynb
+│   ├── 06_RFM_Customer_Segmentation.ipynb
+│   ├── 07_Profitability_Analysis.ipynb
+│   └── 08_Executive_Dashboard.ipynb
+│
+├── outputs/
+│   ├── analytical CSV outputs
+│   ├── business insights
+│   ├── forecasting results
+│   ├── model evaluation results
+│   └── visualizations
+│
+├── scripts/
+│   └── train_churn_model.py
+│
+├── sql/
+│   ├── 01_database_setup.sql
+│   ├── 02_create_tables.sql
+│   ├── 03_import_clean_data.sql
+│   └── 04_business_questions.sql
+│
+├── src/
+│   └── financial_ops/
+│       ├── analytics.py
+│       ├── churn_model.py
+│       ├── data.py
+│       ├── forecasting.py
+│       └── paths.py
+│
+├── tests/
+│   └── test_core.py
+│
+├── Dockerfile
+├── docker-compose.yml
+├── pytest.ini
+├── requirements.txt
+├── requirements-app.txt
+└── README.md
 ```
 
-## Local Setup
+---
+
+## API
+
+A FastAPI layer is included under `api/main.py`, exposing endpoints for churn prediction, customer lookup, model metrics, and revenue forecasts.
+
+Run locally:
 
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-python scripts/train_churn_model.py
+uvicorn api.main:app --reload --port 8000
 ```
 
-Run the Streamlit application from the project root:
-
-```bash
-PYTHONPATH=src .venv/bin/python -m streamlit run app/dashboard.py
-```
-
-Run the FastAPI backend:
-
-```bash
-PYTHONPATH=src .venv/bin/python -m uvicorn api.main:app --reload --port 8000
-```
-
-Run tests:
-
-```bash
-PYTHONPATH=src .venv/bin/python -m pytest -q
-```
-
-## API Documentation
-
-When the API is running, interactive docs are available at:
-
-```text
-http://localhost:8000/docs
-```
-
-Endpoints:
+Interactive API documentation is available at `http://localhost:8000/docs` while the service is running.
 
 | Method | Endpoint | Purpose |
 |---|---|---|
@@ -229,80 +354,105 @@ Example churn request:
 }
 ```
 
+The Streamlit dashboard is the primary production-facing interface; the API is optional for the live demo since the dashboard reads the same local data, outputs, and model artifact directly.
+
+---
+
 ## Docker
 
-Run both the Streamlit app and FastAPI service:
+```bash
+docker build -t financial-operations-analytics .
+docker run -p 8501:8501 financial-operations-analytics
+```
+
+Or run both the Streamlit app and FastAPI service together:
 
 ```bash
 docker compose up --build
 ```
 
-Services:
-
 - Streamlit: `http://localhost:8501`
 - FastAPI: `http://localhost:8000`
 - API docs: `http://localhost:8000/docs`
 
-Docker uses `requirements-app.txt`, a smaller runtime dependency file for the Streamlit and FastAPI demo. The full `requirements.txt` remains available for notebooks, forecasting experiments, and extended analysis.
+The production deployment on Render uses this same Dockerized Streamlit image. `requirements-app.txt` is a smaller runtime dependency file for the Streamlit/FastAPI demo; the full `requirements.txt` remains available for notebooks and extended analysis.
+
+---
+
+## Testing
+
+```bash
+pytest
+```
+
+Test configuration lives in `pytest.ini`; tests are deterministic and do not retrain models on every run.
+
+---
+
+## Run Locally
+
+```bash
+# 1. Clone
+git clone https://github.com/ayush6code9/Financial-Operations-Analytics.git
+cd Financial-Operations-Analytics
+
+# 2. Create a virtual environment
+python3 -m venv .venv
+source .venv/bin/activate
+
+# 3. Install dependencies
+pip install -r requirements-app.txt
+
+# 4. Start the dashboard
+streamlit run app/dashboard.py
+```
+
+---
 
 ## Deployment
 
-Simple portfolio deployment path:
+The application is deployed as a Dockerized Streamlit service on Render:
 
-1. Push the repository to GitHub.
-2. Deploy Streamlit with Streamlit Community Cloud using `app/dashboard.py` as the entry point.
-3. Optional: deploy the FastAPI backend separately on Render, Railway, or a similar low-cost service using:
-
-```bash
-uvicorn api.main:app --host 0.0.0.0 --port $PORT
+```text
+GitHub Repository → Render → Docker Container → Streamlit Dashboard → Public Live Application
 ```
 
-4. Replace `YOUR_LIVE_DEMO_URL` at the top of this README with the deployed Streamlit URL.
+### 🚀 [Financial Operations Analytics — Live Dashboard](https://financial-operations-analytics-1.onrender.com/)
 
-The Streamlit app reads the same local data, outputs, and model artifact directly, so a separate API deployment is optional for the recruiter demo.
+---
 
-## Screenshots
+## Business Value
 
-Add screenshots to `screenshots/` after deployment or local review:
+**Customer Retention** — Identify high-risk customers and prioritize retention efforts.
+**Revenue Planning** — Use historical performance and forecasting to support forward-looking revenue planning.
+**Customer Value** — Identify high-value customers and understand behavioral differences between segments.
+**Profitability** — Evaluate customer and product economics to identify profitable and low-value areas.
+**Executive Decision Support** — Provide management with a consolidated view of financial and customer performance.
 
-- `screenshots/executive-overview.png`
-- `screenshots/churn-prediction.png`
-- `screenshots/customer-360.png`
-- `screenshots/revenue-forecasting.png`
-- `screenshots/model-lab.png`
+---
 
-## SQL Layer
+## Portfolio Highlights
 
-The `sql/` folder preserves the PostgreSQL analytics layer:
-
-- `01_database_setup.sql`
-- `02_create_tables.sql`
-- `03_import_clean_data.sql`
-- `04_business_questions.sql`
-
-The import script now uses relative CSV paths and should be run from the project root.
-
-## Future Improvements
-
-- Add deployed screenshots after the live demo is published
-- Persist a regenerated forecast model-comparison CSV after installing the full forecasting stack
-- Add threshold tuning controls for churn campaign capacity planning
-- Add a small batch scoring command for campaign exports
-- Add CI once the repository is pushed to GitHub
-
-## Recruiter Value
-
-This project demonstrates the full applied analytics path:
+This project demonstrates the complete applied analytics lifecycle:
 
 - Data ingestion, validation, and cleaning
 - SQL schema design and business queries
-- Exploratory analysis and KPI design
-- Revenue forecasting
-- Supervised churn modeling and model comparison
+- Exploratory data analysis and KPI design
+- Feature engineering
+- Time-series revenue forecasting
+- Supervised churn modeling, model comparison, and cross-validation
 - Explainability through feature importance and SHAP outputs
-- Customer segmentation and cohort retention analysis
+- Customer segmentation (RFM) and cohort/retention analysis
 - Profitability analysis
-- Reusable Python modules
-- Interactive Streamlit application
+- Reusable, modular Python analytics code
+- Interactive Streamlit dashboard
 - FastAPI backend
-- Docker-ready local deployment
+- Automated testing with Pytest
+- Docker containerization and cloud deployment
+
+---
+
+## 🔗 Explore the Project
+
+🚀 [Open the Live Dashboard](https://financial-operations-analytics-1.onrender.com/)
+💻 [View the GitHub Repository](https://github.com/ayush6code9/Financial-Operations-Analytics)
